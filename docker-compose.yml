@@ -1,0 +1,16 @@
+services:
+  mywebmvc:
+    build:
+      context: ./MyWebMVC
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - mywebapi
+
+  mywebapi:
+    build:
+      context: ./MyWebApi
+      dockerfile: Dockerfile
+    ports:
+      - "8081:80"
